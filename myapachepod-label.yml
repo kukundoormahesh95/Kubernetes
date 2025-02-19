@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: apachepod-label
+  labels:
+    env: testing
+    name: mahesh
+    class: Kubernetes
+spec:
+  containers:
+    - name: apache-label
+      image: httpd
+      ports:
+        - containerPort: 87

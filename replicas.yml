@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myreplica
+spec:
+  replicas: 5
+  selector:
+     matchLabels:
+       name: mahesh
+  template:
+    metadata:
+      labels:
+         name: mahesh
+    spec: 
+      containers:
+        - name: container01
+          image: httpd
+          ports:
+            - containerPort: 80
+
+

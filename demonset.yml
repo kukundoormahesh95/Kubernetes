@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+   name: seamonset
+spec:
+  selector:
+    matchLabels:
+       name: daemon
+  template:
+    metadata: 
+      labels:
+         name: daemon
+    spec:
+      containers:
+        - name: mycon1
+          image: httpd
+          ports:
+            - containerPort: 80
+

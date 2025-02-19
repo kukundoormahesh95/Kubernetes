@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: frontend-replicas
+spec:
+  replicas: 5
+  selector:
+     matchLabels:
+       name: frontend
+  template:
+    metadata:
+      labels:
+         name: frontend
+    spec: 
+      containers:
+        - name: container-nginx
+          image: nginx
+          ports:
+            - containerPort: 80
+
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+  name: backend-replicas
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: backend
+  template:
+    metadata:
+      labels:
+        name: backend
+    spec:
+      containers:
+        - name: apache-con
+          image: httpd
+          ports:
+            - containerPort: 80

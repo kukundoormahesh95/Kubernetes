@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-multicontainer-pod
+spec:
+  containers:
+     - name: my-container-1
+       image: ubuntu
+       command: ['bash', '-c','echo Hello && sleep 3600']
+     - name: my-container-2
+       image: ubuntu
+       command: ['bash','-c','echo Hello && sleep 3600']
