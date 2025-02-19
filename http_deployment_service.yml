@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+   name: service-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: myselect-httpd
+  template:
+      metadata:
+        labels:
+          name: myselect-httpd
+      spec:
+         containers:
+          - name: mycon-httpd
+            image: httpd
+            ports:
+             - containerPort: 80           
