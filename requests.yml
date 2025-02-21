@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: mempod
+spec:
+  containers:
+     - name: testcon
+       image: centos
+       command: ["/bin/bash","-c","while true;do hello;sleep 50;done"]
+       resources:
+         requests:
+           memory: "128Mi"
+           cpu: "250m"
+         limits:
+           memory: "256Mi"
+           cpu: "500m"

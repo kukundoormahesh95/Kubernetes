@@ -1,0 +1,661 @@
+    1  wget https://raw.githubusercontent.com/akshu20791/Deployment-script/main/k8s-master.sh
+    2  ls -l
+    3  chmod 777 k8s-master.sh
+    4  ./k8s-master.sh
+    5  kubeadm token create --print-join-command 
+    6  kubectl get nodes
+    7  mkdir pods
+    8  cd pods/
+    9  ls
+   10  vi ubuntu-pod
+   11  mv ubuntu-pod ubuntu-pod.yml
+   12  kubectl apply -f ubuntu-pod.yml 
+   13  vi ubuntu-pod.yml 
+   14  kubectl apply -f ubuntu-pod.yml 
+   15  vi ubuntu-pod.yml 
+   16  kubectl apply -f ubuntu-pod.yml 
+   17  vi ubuntu-pod.yml 
+   18  kubectl apply -f ubuntu-pod.yml 
+   19  kubectl get pods
+   20  kubectl get pods -o wide
+   21  cat ubuntu-pod.yml 
+   22  kubectl get deployments -o wide
+   23  kubectl get pods
+   24  kubectl get pods -o wide
+   25  kubectl describe pods | grep -i imag
+   26  ls
+   27  cp ubuntu-pod.yml busybox-pod.yml
+   28  vi busybox-pod.yml 
+   29  kubectl apply -f busybox-pod.yml 
+   30  ls
+   31  kubectl get pods
+   32  kubectl get pods -o wide
+   33  ls
+   34  kubectl get pods -o jsonpath={..imahe}
+   35  kubectl get pods -o jsonpath={..image}
+   36  kubectl describe pods | grep image
+   37  clear
+   38  vi apache-pod.yml
+   39  ls
+   40  cd pods/
+   41  ls
+   42  vi apache.yml
+   43  kubectl apply -f  apache.yml
+   44  vi apache.yml 
+   45  kubectl apply -f  apache.yml
+   46  vi apache.yml 
+   47  kubectl apply -f  apache.yml
+   48  vi apache.yml 
+   49  kubectl apply -f  apache.yml
+   50  vi apache.yml 
+   51  kubectl apply -f  apache.yml
+   52  kubectl get pods
+   53  kubectl get pods -o wide
+   54  curl 192.168.57.130
+   55  curl 192.168.57.130:80
+   56  ping  192.168.57.130
+   57  kubectl get nodes
+   58  kubectl label node ip-172-31-11-28 env=prod
+   59  kubectl label node ip-172-31-3-92 env=dev
+   60  kubectl get nodes --show-labels
+   61  vi nodeselecter
+   62  vi nodeselecter.yml
+   63  kubectl apply -f  nodeselecter.yml
+   64  vi nodeselecter.yml
+   65  kubectl apply -f  nodeselecter.yml
+   66  vi nodeselecter.yml
+   67  kubectl apply -f  nodeselecter.yml
+   68  get pods -o wide
+   69  kubectl get pods -o wide
+   70  kubectl get nodes --show-labels
+   71  vi nodeselecter.yml
+   72  kubectl apply -f  nodeselecter.yml
+   73  vi nodeselecter.yml
+   74  kubectl apply -f  nodeselecter.yml
+   75  vi nodeselecter.yml
+   76  kubectl apply -f  nodeselecter.yml
+   77  kubectl get nodes --show-labels
+   78  vi nodeselecter.yml
+   79  kubectl get nodes --show-labels
+   80  vi nodeselecter.yml
+   81  kubectl get pods -o wide
+   82  kubectl delete pods selector-pod
+   83  vi nodeselecter.yml
+   84  kubectl apply -f  nodeselecter.yml
+   85  kubectl get pods -o wide
+   86  kubectl get nodes --show-labels
+   87  kubectl get pods -o wide
+   88  ping 192.168.57.130
+   89  curl  192.168.57.130:80
+   90  kubectl get nodes --show-level
+   91  kubectl get nodes --show-lebel
+   92  kubectl get nodes --show-lebels
+   93  clear
+   94  kubectl get nodes --show-labels
+   95  kubectl get nodes --show-lebels
+   96  curl  192.168.57.130:80
+   97  kubectl get pods
+   98  kubectl get pods -o wide
+   99  kubectl get nodes --show-lebels
+  100  kubectl get nodes --show-labels
+  101  ls 
+  102  vi nodeselecter.yml 
+  103  kubectl remove pods selector-pod 
+  104  curl  192.168.57.130:80
+  105  kubectl get pods -o wide
+  106  vi apache.yml 
+  107  kubectl remove pods apachepod
+  108  kubectl delete  pods apachepod
+  109  kubectl apply -f apache.yml 
+  110  kubectl get pods -o wide
+  111  curl 192.168.57.131:80
+  112  kubectl describe pod apachepod
+  113  exit
+  114  kubectl get pods
+  115  kubectl get pods -o wide
+  116  curl 192.168.57.131:80
+  117  curl http://192.168.57.131:80
+  118  kubectl get nodes
+  119  kubectl get nodes --show-labels
+  120  kubectl get nodes  ip-172-3-92 --show-labels
+  121  kubectl get nodes ip-172-3-92 --show-labels
+  122  kubectl label ip-172-31-3-91 env
+  123  kubectl label ip-172-31-3-91 env -
+  124  kubectl label node ip-172-31-3-91 env -
+  125  kubectl label node ip-172-31-3-91 env:master
+  126  kubectl label node ip-172-31-3-91 env=master
+  127  kubectl label node ip-172-31-3-92 env=master
+  128  kubectl label node ip-172-31-3-92 env=master --overwrite=true
+  129  kubectl get nodes 
+  130  kubectl label node ip-172-31-8-222  env=dev --o
+  131  kubectl get nodes --show-labels
+  132  cd /root/
+  133  ls
+  134  cd pods/
+  135  ls
+  136  kubectl apply apache.yml 
+  137  kubectl apply -f apache.yml 
+  138  kubectl apply -f nodeselecter.yml 
+  139  ls
+  140  kubectl get pods
+  141  kubectl get pods -o wide
+  142  kubectl label node ip-172-31-3-92 env-
+  143  vi myapachepod-label.yml
+  144  kubectl apply -f  myapachepod-label.yml 
+  145  vi myapachepod-label.yml
+  146  kubectl apply -f  myapachepod-label.yml 
+  147  kubectl get pods -o wide
+  148  kubectl get pods -o wide --show-labels
+  149  curl http://192.168.57.132:87
+  150  curl http://192.168.57.131:80
+  151  curl 192.168.57.131:80
+  152  curl 192.168.57.131:87
+  153  curl 192.168.57.131:80
+  154  kubectl get pods -o wide --show-labels
+  155  kubectl stop pod apachepod
+  156  ls
+  157  cat nodeselecter.yml 
+  158  cat myapachepod-label.yml 
+  159  history
+  160  vi apache.yml 
+  161  kubectl apply -f  apache.yml 
+  162  vi apache.yml 
+  163  kubectl apply -f  apache.yml 
+  164  vi apache.yml 
+  165  kubectl apply -f  apache.yml 
+  166  vi apache.yml 
+  167  curl 192.168.57.131:80
+  168  ls
+  169  kubectl get pods
+  170  ls
+  171  netstat
+  172  kubectl get pods
+  173  kubectl get pod -o wid
+  174  kubectl get pods
+  175  kubectl describe pod apachepod-label
+  176  kubectl get pod
+  177  kubectl describe pod my-busybox-pod
+  178  kubectl describe pod my-ubuntu-pod
+  179  kubectl get pods
+  180  kubectl describe pod selector-pod
+  181  kubectl delete pod selector-pod
+  182  kubectl get pods -o -wide
+  183  kubectl get pods -o wide
+  184  curl 192.168.57.131:80
+  185  curl http://192.168.57.131:80
+  186  kubectl get pods -o wide
+  187  ls
+  188  cd pods/
+  189  ls
+  190  cat apache.yml 
+  191  ls
+  192  kubectl get pods -o wide
+  193  curl 192.168.57.131:80
+  194  curl 192.168.57.131:87
+  195  kubectl delete pod apachepod
+  196  kubectl delete pod apachepod-label
+  197  kubectl delete pod my-busybox-pod
+  198  kubectl delete pod my-ubuntu-pod
+  199  kubectl get pods -o wide
+  200  ls
+  201  cd pods
+  202  ls
+  203  kubectl get pods -o wide
+  204  kubectl apply -f apache.yml 
+  205  kubectl get pods -o wide
+  206  curl 192.168.57.133:80
+  207  kubectl describe pod apachepod
+  208  apt install netstat
+  209  apt install netstat-tools
+  210  apt install net-tools 
+  211  netstat
+  212  netstat  | grep 80
+  213  kubectl get pods
+  214  kubectl get pods -o wide
+  215  ping 192.168,57.133
+  216  ping 192.168.57.133
+  217  ls
+  218  ping 192.168.57.133
+  219  netstat  | grep 80
+  220  curl 192.168.57.133:80
+  221  l
+  222  cd pods/
+  223  clear
+  224  vi replicas.yml
+  225  kubectl apply -f  replicas.yml
+  226  vi replicas.yml
+  227  kubectl apply -f  replicas.yml
+  228  vi replicas.yml
+  229  kubectl apply -f  replicas.yml
+  230  vi replicas.yml
+  231  kubectl apply -f  replicas.yml
+  232  vi replicas.yml
+  233  kubectl apply -f  replicas.yml
+  234  cat replicas.yml 
+  235  vi replicas.yml
+  236  kubectl apply -f  replicas.yml
+  237  kubectl get pods -o wide
+  238  kubectl delete pods --all
+  239  kubectl get pods -o wide
+  240  kubectl get rs
+  241  kubectldelete rs myreplica
+  242  kubectl delete rs myreplica
+  243  kubectl scale --replicas=10 -f replicas.yml 
+  244  kubectl get rs
+  245  ls
+  246  kubectl scale --replicas=10 -f replicas.yml 
+  247  kubectl apply -f  replicas.yml
+  248  kubectl scale --replicas=10 -f replicas.yml 
+  249  kubectl get pods
+  250  cat replicas.yml 
+  251  historty
+  252  history
+  253  vi replicas.yml 
+  254  vi demonset.yml 
+  255  kubectl apply -f  demonset.yml 
+  256  vi demonset.yml 
+  257  kubectl apply -f  demonset.yml 
+  258  vi demonset.yml 
+  259  kubectl apply -f  demonset.yml 
+  260  vi demonset.yml 
+  261  kubectl apply -f  demonset.yml 
+  262  vi demonset.yml 
+  263  kubectl apply -f  demonset.yml 
+  264  vi demonset.yml 
+  265  kubectl apply -f  demonset.yml 
+  266  vi demonset.yml 
+  267  kubectl apply -f  demonset.yml 
+  268  kubectl get pods
+  269  kubectl get pods -o wide
+  270  kubectl delete rs myreplica
+  271  kubectl get pods -o wide
+  272  kubectl delete pod seamonset=29jqh
+  273  kubectl delete pod seamonset-29jqh
+  274  kubectl get pods -o wide
+  275  kubectl delete pod seamonset-29jqh
+  276  kubectl delete pod seamonset-tcsvp
+  277  kubectl get pods -o wide
+  278  vi apache_replica.yml
+  279  clear
+  280  vi apache_replica.yml
+  281  ls
+  282  cp replicas.yml apache_replica.yml
+  283  vi apache_replica.yml 
+  284  ls
+  285  cd pods/
+  286  ls
+  287  vi apache_replica.yml 
+  288  kubectl apply -f apache_replica.yml 
+  289  kubectl get pods
+  290  vi apache_replica.yml 
+  291  kubectl apply -f apache_replica.yml 
+  292  vi apache_replica.yml 
+  293  kubectl apply -f apache_replica.yml 
+  294  vi apache_replica.yml 
+  295  kubectl apply -f apache_replica.yml 
+  296  vi apache_replica.yml 
+  297  kubectl apply -f apache_replica.yml 
+  298  vi apache_replica.yml 
+  299  kubectl apply -f apache_replica.yml 
+  300  kubectl get pods
+  301  kubectl apply -f apache_replica.yml 
+  302  kubectl get pods
+  303  vi apache_replica.yml 
+  304  kubectl get pods
+  305  kubectl apply -f apache_replica.yml 
+  306  vi apache_replica.yml 
+  307  kubectl apply -f apache_replica.yml 
+  308  kubectl get pods
+  309  clear
+  310  ls
+  311  cd pods/
+  312  vi ubuntu_pods.yml
+  313  kubectl apply ubuntu_pods.yml 
+  314  kubectl apply -f ubuntu_pods.yml 
+  315  vi ubuntu_pods.yml
+  316  kubectl apply -f ubuntu_pods.yml 
+  317  Kubectl get pods
+  318  kubectl get pods
+  319  kubectl get pods 
+  320  kubectl delete pod my-ubuntu-pod
+  321  vi ubuntu_pods.yml
+  322  kubectl apply -f ubuntu_pods.yml 
+  323  kubectl get pods 
+  324  vi ubuntu_pods.yml
+  325  kubectl apply -f ubuntu_pods.yml 
+  326  cd pods/
+  327  ls
+  328  kubectl get pods
+  329  kubectl delete pod my-ubuntu-pod
+  330  kubectl apply -f ubuntu-pod.yml 
+  331  kubectl get pods
+  332  cp ubuntu-pod.yml multi-container.yml
+  333  vi multi-container.yml 
+  334  kubectl apply -f  multi-container.yml 
+  335  kubectl get pods
+  336  kubectl describe pod my-multicotainer-pod
+  337  kubectl describe pod my-multicontainer-pod
+  338  cat multi-container.yml 
+  339  get kubectl all
+  340  kubectl get all
+  341  kubectl get ds
+  342  kubectl delete ds all
+  343  kubectl delete ds --all
+  344  kubectl delete rs -all
+  345  kubectl delete rs -a-ll
+  346  kubectl delete rs --all
+  347  clear
+  348  kubectl get pods
+  349  apt install git
+  350  ls
+  351  vi mydeployment.yml
+  352  ls
+  353  celar
+  354  clear
+  355  vi mydeployment.yml
+  356  cd pods/
+  357  ls
+  358  vi mydeployment.yml
+  359  kubectl apply -f  mydeployment.yml
+  360  kubectl get ds
+  361  kubectl get pods
+  362  kubectl get deploy
+  363  kubectl get pods 
+  364  clear
+  365  kubectl get pods 
+  366  kubectl logs -f mydeployment-849fccd6d7-f2f4b
+  367  vi mydeployment.yml
+  368  kubectl get deploy
+  369  kubectl apply -f  mydeployment.yml
+  370  vi mydeployment.yml
+  371  kubectl apply -f  mydeployment.yml
+  372  kubectl get deploy
+  373  kubectl get pods
+  374  kubectl get rs
+  375  keubectl logs -f mydeployment-849fccd6d7-f2f4b
+  376  kubectl logs -f mydeployment-849fccd6d7-f2f4b
+  377  kubectl get pods
+  378  kubectl logs -f mydeployment-7b6b7447ff-lcdzq
+  379  history
+  380  cat mydeployment.yml 
+  381  kubectl rollback undo deployment/mydeployment
+  382  kubectl rollout  undo deployment/mydeployment
+  383  kubectl get pods
+  384  kubectl logs -f mydeployment-849fccd6d7-vnwmb
+  385  cd ..
+  386  ls
+  387  cd ..
+  388  ls
+  389  cd pods
+  390  cd /pods
+  391  cd /root/pods/
+  392  ls
+  393  git init
+  394  git add .
+  395  git commit -m "First COmmit"
+  396  git remote add origin https://github.com/kukundoormahesh95/Kubernetes.git
+  397  git push origin master
+  398  git config --global user.email 'kukundoormahesh95@gmail.com'
+  399  git config --global user.name  'kukundoormahesh'
+  400  git push origin master
+  401  cd pods/
+  402  ls
+  403  git push origin master
+  404  git remote add origin1 git@github.com:kukundoormahesh95/Kubernetes.git
+  405  git push origin1 master
+  406  ssh-keygen -t rsa -b 4096 -C "kukundoormahesh95@gmail.com"
+  407  [200~$ ssh-add -K ~/.ssh/id_rsa
+  408  ssh-add -K ~/.ssh/id_rsa
+  409  ssh-add -K ~/root/.ssh/id_rsa
+  410  cat /root/.ssh/id_rsa
+  411  ssh -T git@github.com
+  412  git push origin master
+  413  clear
+  414  ssh-keygen -t ed25519 -C "kukundoormahesh95@gmail.com"
+  415  ssh-add /root/.ssh/id_ed25519
+  416  cat /root/.ssh/id_ed25519.pub 
+  417  git push origin1 master
+  418  clear
+  419  Vi http_deployment_service.yml
+  420  vi http_deployment_service.yml
+  421  kubectl apply -f  http_deployment_service.yml
+  422  vi http_deployment_service.yml
+  423  kubectl apply -f  http_deployment_service.yml
+  424  vi http_deployment_service.yml
+  425  kubectl apply -f  http_deployment_service.yml
+  426  vi http_deployment_service.yml
+  427  kubectl apply -f  http_deployment_service.yml
+  428  vi http_deployment_service.yml
+  429  kubectl apply -f  http_deployment_service.yml
+  430  vi http_deployment_service.yml
+  431  kubectl apply -f  http_deployment_service.yml
+  432  kubectl get rs
+  433  kubectl get pods -o wide
+  434  ls
+  435  vu http_deployment_service.yml 
+  436  cat  http_deployment_service.yml 
+  437  vi myservice.yml
+  438  kubectl apply -f  myservice.yml
+  439  vi myservice.yml
+  440  kubectl apply -f  myservice.yml
+  441  vi myservice.yml
+  442  kubectl apply -f  myservice.yml
+  443  kubectl get svc
+  444  curl 10.108.103.85:1902
+  445  ipconfig
+  446  ifconfig
+  447  kubectl get svc
+  448  curl 10.108.103.85:1902
+  449  kubectl delete pods --all
+  450  kubectl get pods -o wide
+  451  curl 10.108.103.85:1902
+  452  git add .
+  453  git commit -m "second commit"
+  454  git push origin1 master
+  455  apt get | grep docker
+  456  apt list | grep docker
+  457  apt list | grep docker.io
+  458  docker --version
+  459  docker ps -a
+  460  docker run -it --name mycon-ubuntu ubuntu /bin/bash
+  461  docker run -dt --name mycon-nginx nginx  /bin/bash
+  462  docker ps 
+  463  docker stop 5c74bd2b107a
+  464  docker container prune
+  465  docker ps -a
+  466  docker images
+  467  docker image prune
+  468  docker login -u maheshnayak
+  469  docker pull Redis
+  470  docker pull redis
+  471  docker images
+  472  cd pods/
+  473  ls
+  474  Dockerfile
+  475  vi Dockerfile
+  476  cd pods/
+  477  ls
+  478  vi Dockerfile
+  479  docker build -t myapp:v1 .
+  480  clear
+  481  docker create volume mydate
+  482  docker volume create  mydata
+  483  docker run -it --name=con1-mydata --mount source=mydata destination=/app nginx:latest /bin/bash
+  484  docker run -it --name=con1-mydata --mount source=mydata,target=/app nginx:latest /bin/bash
+  485  docker ps -a
+  486  docker stop con1-mydata
+  487  docker rm  con1-mydata
+  488  docker volume ls
+  489  docker volume mydate
+  490  docker volume isnpect  mydate
+  491  docker  inspect volume  mydate
+  492  docker  inspect volume  mydata
+  493  cd /var/lib/docker/volumes/mydata/_data
+  494  ls
+  495  cat f1
+  496  docker run -it --name mysql-con --p 3306:3306   mysql:latest 
+  497  docker run -it --name mysql-con -p 3306:3306   mysql:latest 
+  498  docker ps
+  499  docker ps -a
+  500  docker start mysql-con
+  501  docker ps
+  502  docker run -it --name mysql-con -p 3306:3306   mysql:latest 
+  503  docker remove mysql-con
+  504  docker run -it --name mysql-con -p 3306:3306   mysql:latest /bin/bash
+  505  docker ps -a
+  506  docker ps
+  507  docker remove mysql-con
+  508  docker run -p 3306:3306 --name my-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -e MYSQL_DATABASE=mydb -d mysql:latest
+  509  docker ps
+  510  docker remove my-mysql
+  511  docker stop  my-mysql
+  512  docker remove my-mysql
+  513  docker run -p 3307:3306 --name my-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -e MYSQL_DATABASE=mydb -d mysql:latest
+  514  docker ps
+  515  docker run -p 1202:8080 --name nginx-con nginx:latest /bin/bash
+  516  docker ps -1
+  517  docker ps -a
+  518  docker run -it  -P 1202:8080 --name nginx-con nginx:latest /bin/bash
+  519  docker run -p 1202:8080 --name nginx-con nginx:latest /bin/bash
+  520  docker stop nginx-con
+  521  docker rm nginx-con
+  522  docker run -it   --name nginx-con -p 1020:8080  nginx:latest /bin/bash
+  523  docker ps
+  524  ls
+  525  docker ps
+  526  docker exec -it nginx-con /bin/bash
+  527  docker ps
+  528  docker exec -it my-mysql /bin/bash
+  529  docker exec -it nginx-con /bin/bash
+  530  docker ps
+  531  docker stop mycon-nginx
+  532  docker rm mycon-nginx
+  533  docker ps
+  534  docker inspect mysql
+  535  docker exec -t mysql mySchema -p
+  536  docker exec -t mysql mydb -p
+  537  docker ps 
+  538  docker inspect mysql
+  539  docker exec -t mysql mysql mySchema -p
+  540  curl 172.18.0.2:3306
+  541  ps -eo pid,ppid,%mem,%cpu --sort %mem
+  542  ps -eo pid,ppid,%mem,%cpu --sort %mem | top -5
+  543  ps -eo pid,ppid,%mem,%cpu --sort %mem | head -5
+  544  ps -eo pid,ppid,%mem,%cpu,comm --sort %mem | head -5
+  545  top -b n 1
+  546  top -b -n 1
+  547  free -t
+  548  clear
+  549  cd pods/
+  550  ls
+  551  vi pv.yml
+  552  vi pvc.yml
+  553  cat pv.yml 
+  554  kubectl get pv
+  555  kubectl apply -f pv.yml 
+  556  vi pv.yml
+  557  kubectl apply -f pv.yml 
+  558  kubectl get pv
+  559  kubectl apply -f pvc.yml 
+  560  vi pvc.yml 
+  561  kubectl apply -f pvc.yml 
+  562  vi pvc.yml 
+  563  kubectl apply -f pvc.yml 
+  564  vi pvc.yml 
+  565  kubectl apply -f pvc.yml 
+  566  vi pvc.yml 
+  567  kubectl apply -f pvc.yml 
+  568  kubectl get pvc
+  569  vi mypod-pvc.yml
+  570  kubectl apply -f  mypod-pvc.yml
+  571  vi mypod-pvc.yml
+  572  kubectl apply -f  mypod-pvc.yml
+  573  vi mypod-pvc.yml
+  574  kubectl get pvc
+  575  kubectl get pv
+  576  vi mypod-pvc.yml
+  577  kubectl apply -f  mypod-pvc.yml
+  578  clear
+  579  cat pv.yml 
+  580  cat pvc.yml 
+  581  cat  mypod-pvc.yml
+  582  cat
+  583  vi  mypod-pvc.yml
+  584  kubectl apply -f mypod-pvc.yml 
+  585  kubectl get pvs my-pvc -o yml
+  586  kubectl get pvc my-pvc -o yaml |grep request
+  587  kubectl get pvc my-pvc -o yaml |grep accessModes
+  588  vi  mypod-pvc.yml
+  589  kubectl apply -f mypod-pvc.yml 
+  590  vi  mypod-pvc.yml
+  591  kubectl apply -f mypod-pvc.yml 
+  592  kubectl get pods 
+  593  kubectl get pods -o wide
+  594  kubectl describe pod pvc-pod
+  595  clear
+  596  docker exec -it nginx-con /bin/bash
+  597  docker exec -it my-mysql 
+  598  docker exec -it my-mysql /bin/bash
+  599  docker ps
+  600  docker stopmy-mysql
+  601  docker stop my-mysql
+  602  docker rm  my-mysql
+  603  docker run -d --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=secret -e MYSQL_DATABASE=mySchema mysql:5
+  604  docker ps 
+  605  docker exec -it mysql bash
+  606  docker describe mysql
+  607  docker inspect  mysql
+  608  docker network ls
+  609  docker network create mynetwork
+  610  docker stop mysql
+  611  docker remove mysql
+  612  docker run -d --name mysql--network mynetwork  -p 3306:3306 -e MYSQL_ROOT_PASSWORD=secret -e MYSQL_DATABASE=mySchema 
+  613  docker run -d --name mysql --network mynetwork  -p 3306:3306 -e MYSQL_ROOT_PASSWORD=secret -e MYSQL_DATABASE=mySchema 
+  614  docker run -it --name mysql --network mynetwork  -p 3306:3306 -e MYSQL_ROOT_PASSWORD=secret -e MYSQL_DATABASE=mySchema 
+  615  docker run -it  --network mynetwork --name mysql  -p 3306:3306 -e MYSQL_ROOT_PASSWORD=secret -e MYSQL_DATABASE=mySchema 
+  616  docker run -it  --network mynetwork --name mysql  -p 3306:3306 -e MYSQL_ROOT_PASSWORD=secret -e MYSQL_DATABASE=mySchema mysql:latest
+  617  cd pods/
+  618  ls
+  619  git remote
+  620  git commit -m "Third"
+  621  git add .
+  622  git commit -m "Third"
+  623  git push origin1
+  624  vi requests.yml
+  625  kubectl apply -f  requests.yml
+  626  decribe pod requests.yml 
+  627  kubectl decribe pod requests.yml 
+  628  kubectl describe pod requests.yml 
+  629  kubectl describe pod mempod 
+  630  vi configmap.yml
+  631  kubectl apply -f configmap.yml 
+  632  kubectl get configmap
+  633  kubectl describe configmap prod-configmap
+  634  vi configpod.yml
+  635  kubectl apply configpod.yml
+  636  kubectl apply -f configpod.yml
+  637  vi configpod.yml
+  638  kubectl apply -f configpod.yml
+  639  vi configpod.yml
+  640  kubectl apply -f configpod.yml
+  641  cat configpod.yml 
+  642  kubectl exec -it configpod -it env-con == /bin/bash
+  643  kubectl exec -it configpod -it env-con --  /bin/bash
+  644  cp  configpod.yml secretpod.yml
+  645  vi secretpod.yml 
+  646  cat secretpod.yml 
+  647  kubectl create secret prod-secret --from-literal=username=admin --from-literal=password=admin
+  648  kubectl create secret generic prod-secret --from-literal=username=admin --from-literal=password=admin
+  649  kubectl apply -f secretpod.yml 
+  650  kubectl exec -it sec-configpod -- /bin/bash
+  651  cat secretpod.yml 
+  652  vi secretpod.yml 
+  653* kubectl rm pod 
+  654  kubectl exec -it sec-configpod -- /bin/bash
+  655  kubectl delete pod  sec-configpod 
+  656  kubectl apply -f secretpod.yml 
+  657  kubectl exec -it sec-configpod -- /bin/bash
+  658  env
+  659  kubectl exec -it sec-configpod -- /bin/bash
+  660  history
+  661  history > myhistory
